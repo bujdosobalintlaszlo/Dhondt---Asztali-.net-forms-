@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace DhondtAppDesign
 {
@@ -103,8 +104,38 @@ namespace DhondtAppDesign
             lszavazatszam.Text = sz.SzavazatSzam();
             lmandatumszam.Text = sz.MandSzam();
             lnyertmandarany.Text = sz.NyertMandArany()+"%";
+            lnyertesnev.Text = sz.NyertNev();
+            lpartokszama.Text = sz.Partszam();
+            lnyertszavszam.Text = sz.NyertSzavSzam();
+            sz.MandatumAranyDiagram(cmandatumok);
+            sz.SzavazatiAranyDiagram(cszavaranydiag);
+            sz.SzavazatokEsPartok(cszavazatespart);
             //lnyertszavszam.Text = sz.NyertSzavSzam();
             //dgvmatrix
+        }
+
+        private void btorol_Click(object sender, EventArgs e)
+        {
+            lszavazatszam.Text = "0";
+            lmandatumszam.Text = "0";
+            lnyertmandarany.Text = "0";
+            lnyertesnev.Text = "-";
+            lpartokszama.Text = "0";
+            lnemszavazott.Text = "0";
+            lfilenev.Text = "Üres";
+            lnyertszavszam.Text = "0";
+            cmandatumok.Series.Clear();
+            cszavaranydiag.Series.Clear();
+            cszavazatespart.Series.Clear();
+            hasznaltFile = "";
+            dgvmatrix.Rows.Clear();
+            dgvmatrix.DataSource = null;
+            dgvmatrix.Refresh();
+        }
+
+        private void lnyertszavszam_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

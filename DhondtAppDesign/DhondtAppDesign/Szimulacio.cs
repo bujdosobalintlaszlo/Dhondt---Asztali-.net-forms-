@@ -7,6 +7,8 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Reflection;
 using static System.Net.WebRequestMethods;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Xml.Linq;
 
 namespace Dhondt
 {
@@ -327,12 +329,50 @@ namespace Dhondt
             List<(int, string)> k = sz.Cserelget();
             return ((double)MandatumCount(k).Max(x => x.Value) / MandatumCount(k).Sum(x => x.Value) *100).ToString();
         }
-
-        public string NyertNev() {
+        public string Partszam() {
+            Szamol sz = new Szamol(filepath);
+            return sz.p.Partszam.ToString();
+        }
+        public string NyertNev()
+        {
             Szamol sz = new Szamol(filepath);
             List<(int, string)> k = sz.Cserelget();
-            return "Meg nem mukodik";
+            int maxInt = k.Max(tuple => tuple.Item1);
+            var maxTuple = k.First(tuple => tuple.Item1 == maxInt);
+            return maxTuple.Item2;
         }
+        public string NyertSzavSzam() {
+            Szamol sz = new Szamol(filepath);
+            return sz.p.Parts.Max(x => x.SzavazatSzam).ToString();
+        }
+        public void MandatumAranyDiagram(Chart c)
+        {
+            Szamol sz = new Szamol(filepath);
+            List<(int, string)> m = sz.MandatumKioszt().GroupBy(x => x.Item2).Select(group => (group.Sum(x => x.Item1), group.Key)).ToList();
+            for (int i = 0; i < m.Count; ++i){
+                c.Series[$"Series1"].Points.AddXY($"{m[i].Item2}", m[i].Item1);
+            }
+            
+        }
+        public void SzavazatiAranyDiagram(Chart c) { 
+            Szamol sz = new Szamol(filepath);
+            for (int i = 0; i < sz.p.Parts.Count; ++i)
+            {
+                c.Series[$"Series1"].Points.AddXY($"{sz.p.Parts[i].PartNev}", sz.p.Parts[i].SzavazatSzam);
+            }
+        }
+
+        public void SzavazatokEsPartok(Chart c) {
+            Szamol sz = new Szamol(filepath);
+            //c.Series.Clear();
+            for (int i = 0; i < sz.p.Parts.Count; ++i)
+            {
+                //c.Series.Add(sz.p.Parts[i].PartNev);
+                c.Series["Series1"].Points.AddXY($"{sz.p.Parts[i].PartNev}", sz.p.Parts[i].SzavazatSzam);
+                //MessageBox.Show($"{sz.p.Parts[i].PartNev}");
+            }
+        }
+
     }
 
 

@@ -53,7 +53,7 @@ namespace DhondtAppDesign
             this.lszavazatszam = new System.Windows.Forms.Label();
             this.lszavszam = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lnemszavazott = new System.Windows.Forms.Label();
             this.lnemszav = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -61,22 +61,22 @@ namespace DhondtAppDesign
             this.lmandatumszam = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lpartszam = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lpartokszama = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lnyertes = new System.Windows.Forms.Label();
             this.lnyertesnev = new System.Windows.Forms.Label();
             this.nyertesszavsz = new System.Windows.Forms.Panel();
-            this.lnyertesszavszam = new System.Windows.Forms.Label();
+            this.lnyertesszavszamf = new System.Windows.Forms.Label();
             this.lnyertszavszam = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.larany = new System.Windows.Forms.Label();
             this.lnyertmandarany = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cszavazatespart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvmatrix = new System.Windows.Forms.DataGridView();
-            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cszavaranydiag = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cmandatumok = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,10 +86,10 @@ namespace DhondtAppDesign
             this.nyertesszavsz.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cszavazatespart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmatrix)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cszavaranydiag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmandatumok)).BeginInit();
             this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,6 +146,7 @@ namespace DhondtAppDesign
             this.btorol.TabIndex = 6;
             this.btorol.Text = "Törlés";
             this.btorol.UseVisualStyleBackColor = true;
+            this.btorol.Click += new System.EventHandler(this.btorol_Click);
             // 
             // bok
             // 
@@ -193,22 +194,22 @@ namespace DhondtAppDesign
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lnemszavazott);
             this.panel2.Controls.Add(this.lnemszav);
             this.panel2.Location = new System.Drawing.Point(254, 108);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 100);
             this.panel2.TabIndex = 11;
             // 
-            // label1
+            // lnemszavazott
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.label1.Location = new System.Drawing.Point(13, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 25);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "10000000";
+            this.lnemszavazott.AutoSize = true;
+            this.lnemszavazott.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.lnemszavazott.Location = new System.Drawing.Point(13, 42);
+            this.lnemszavazott.Name = "lnemszavazott";
+            this.lnemszavazott.Size = new System.Drawing.Size(108, 25);
+            this.lnemszavazott.TabIndex = 10;
+            this.lnemszavazott.Text = "10000000";
             // 
             // lnemszav
             // 
@@ -266,7 +267,7 @@ namespace DhondtAppDesign
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.lpartszam);
-            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.lpartokszama);
             this.panel4.Location = new System.Drawing.Point(700, 108);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 100);
@@ -283,15 +284,15 @@ namespace DhondtAppDesign
             this.lpartszam.TabIndex = 13;
             this.lpartszam.Text = "Pártszám";
             // 
-            // label7
+            // lpartokszama
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.label7.Location = new System.Drawing.Point(13, 42);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 25);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "10000000";
+            this.lpartokszama.AutoSize = true;
+            this.lpartokszama.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.lpartokszama.Location = new System.Drawing.Point(13, 42);
+            this.lpartokszama.Name = "lpartokszama";
+            this.lpartokszama.Size = new System.Drawing.Size(108, 25);
+            this.lpartokszama.TabIndex = 10;
+            this.lpartokszama.Text = "10000000";
             // 
             // panel5
             // 
@@ -327,23 +328,23 @@ namespace DhondtAppDesign
             // nyertesszavsz
             // 
             this.nyertesszavsz.BackColor = System.Drawing.Color.White;
-            this.nyertesszavsz.Controls.Add(this.lnyertesszavszam);
+            this.nyertesszavsz.Controls.Add(this.lnyertesszavszamf);
             this.nyertesszavsz.Controls.Add(this.lnyertszavszam);
             this.nyertesszavsz.Location = new System.Drawing.Point(1151, 108);
             this.nyertesszavsz.Name = "nyertesszavsz";
             this.nyertesszavsz.Size = new System.Drawing.Size(200, 100);
             this.nyertesszavsz.TabIndex = 16;
             // 
-            // lnyertesszavszam
+            // lnyertesszavszamf
             // 
-            this.lnyertesszavszam.AutoSize = true;
-            this.lnyertesszavszam.BackColor = System.Drawing.Color.White;
-            this.lnyertesszavszam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.lnyertesszavszam.Location = new System.Drawing.Point(0, 0);
-            this.lnyertesszavszam.Name = "lnyertesszavszam";
-            this.lnyertesszavszam.Size = new System.Drawing.Size(158, 17);
-            this.lnyertesszavszam.TabIndex = 13;
-            this.lnyertesszavszam.Text = "Nyertes szavazatszáma";
+            this.lnyertesszavszamf.AutoSize = true;
+            this.lnyertesszavszamf.BackColor = System.Drawing.Color.White;
+            this.lnyertesszavszamf.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.lnyertesszavszamf.Location = new System.Drawing.Point(0, 0);
+            this.lnyertesszavszamf.Name = "lnyertesszavszamf";
+            this.lnyertesszavszamf.Size = new System.Drawing.Size(158, 17);
+            this.lnyertesszavszamf.TabIndex = 13;
+            this.lnyertesszavszamf.Text = "Nyertes szavazatszáma";
             // 
             // lnyertszavszam
             // 
@@ -354,6 +355,7 @@ namespace DhondtAppDesign
             this.lnyertszavszam.Size = new System.Drawing.Size(108, 25);
             this.lnyertszavszam.TabIndex = 10;
             this.lnyertszavszam.Text = "10000000";
+            this.lnyertszavszam.Click += new System.EventHandler(this.lnyertszavszam_Click);
             // 
             // panel6
             // 
@@ -407,25 +409,27 @@ namespace DhondtAppDesign
             this.label5.TabIndex = 14;
             this.label5.Text = "File név";
             // 
-            // chart1
+            // cszavazatespart
             // 
             chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
+            this.cszavazatespart.ChartAreas.Add(chartArea4);
             legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
-            this.chart1.Location = new System.Drawing.Point(908, 547);
-            this.chart1.Name = "chart1";
+            this.cszavazatespart.Legends.Add(legend4);
+            this.cszavazatespart.Location = new System.Drawing.Point(908, 547);
+            this.cszavazatespart.Name = "cszavazatespart";
+            this.cszavazatespart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
             series4.Legend = "Legend1";
             series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
-            this.chart1.Size = new System.Drawing.Size(978, 432);
-            this.chart1.TabIndex = 19;
-            this.chart1.Text = "chart1";
+            this.cszavazatespart.Series.Add(series4);
+            this.cszavazatespart.Size = new System.Drawing.Size(978, 432);
+            this.cszavazatespart.TabIndex = 19;
+            this.cszavazatespart.Text = "chart1";
             title4.Name = "Title1";
             title4.Text = "Választási eredmény";
-            this.chart1.Titles.Add(title4);
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            this.cszavazatespart.Titles.Add(title4);
+            this.cszavazatespart.Click += new System.EventHandler(this.chart1_Click);
             // 
             // dgvmatrix
             // 
@@ -435,49 +439,49 @@ namespace DhondtAppDesign
             this.dgvmatrix.Size = new System.Drawing.Size(857, 741);
             this.dgvmatrix.TabIndex = 21;
             // 
-            // chart3
+            // cszavaranydiag
             // 
             chartArea5.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea5);
+            this.cszavaranydiag.ChartAreas.Add(chartArea5);
             legend5.Name = "Legend1";
-            this.chart3.Legends.Add(legend5);
-            this.chart3.Location = new System.Drawing.Point(1412, 238);
-            this.chart3.Name = "chart3";
-            this.chart3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            this.cszavaranydiag.Legends.Add(legend5);
+            this.cszavaranydiag.Location = new System.Drawing.Point(1412, 238);
+            this.cszavaranydiag.Name = "cszavaranydiag";
+            this.cszavaranydiag.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series5.ChartArea = "ChartArea1";
             series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series5.Legend = "Legend1";
             series5.Name = "Series1";
             series5.YValuesPerPoint = 2;
-            this.chart3.Series.Add(series5);
-            this.chart3.Size = new System.Drawing.Size(474, 290);
-            this.chart3.TabIndex = 22;
-            this.chart3.Text = "chart3";
+            this.cszavaranydiag.Series.Add(series5);
+            this.cszavaranydiag.Size = new System.Drawing.Size(474, 290);
+            this.cszavaranydiag.TabIndex = 22;
+            this.cszavaranydiag.Text = "chart3";
             title5.Name = "Title1";
-            title5.Text = "Választási arány";
-            this.chart3.Titles.Add(title5);
+            title5.Text = "Szavazati arány";
+            this.cszavaranydiag.Titles.Add(title5);
             // 
-            // chart2
+            // cmandatumok
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea6);
+            chartArea6.Name = "Mandatumok";
+            this.cmandatumok.ChartAreas.Add(chartArea6);
             legend6.Name = "Legend1";
-            this.chart2.Legends.Add(legend6);
-            this.chart2.Location = new System.Drawing.Point(908, 238);
-            this.chart2.Name = "chart2";
-            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series6.ChartArea = "ChartArea1";
+            this.cmandatumok.Legends.Add(legend6);
+            this.cmandatumok.Location = new System.Drawing.Point(908, 238);
+            this.cmandatumok.Name = "cmandatumok";
+            this.cmandatumok.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series6.ChartArea = "Mandatumok";
             series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series6.Legend = "Legend1";
             series6.Name = "Series1";
             series6.YValuesPerPoint = 2;
-            this.chart2.Series.Add(series6);
-            this.chart2.Size = new System.Drawing.Size(474, 290);
-            this.chart2.TabIndex = 23;
-            this.chart2.Text = "chart2";
+            this.cmandatumok.Series.Add(series6);
+            this.cmandatumok.Size = new System.Drawing.Size(474, 290);
+            this.cmandatumok.TabIndex = 23;
+            this.cmandatumok.Text = "chart2";
             title6.Name = "Title2";
             title6.Text = "Mandátum arány";
-            this.chart2.Titles.Add(title6);
+            this.cmandatumok.Titles.Add(title6);
             // 
             // panel8
             // 
@@ -498,10 +502,10 @@ namespace DhondtAppDesign
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 991);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.chart2);
-            this.Controls.Add(this.chart3);
+            this.Controls.Add(this.cmandatumok);
+            this.Controls.Add(this.cszavaranydiag);
             this.Controls.Add(this.dgvmatrix);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.cszavazatespart);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel7);
@@ -530,10 +534,10 @@ namespace DhondtAppDesign
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cszavazatespart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmatrix)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cszavaranydiag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmandatumok)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.ResumeLayout(false);
@@ -554,7 +558,7 @@ namespace DhondtAppDesign
         private System.Windows.Forms.Label lszavszam;
         private System.Windows.Forms.Label lszavazatszam;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lnemszavazott;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lnemszav;
         private System.Windows.Forms.Panel panel3;
@@ -562,22 +566,22 @@ namespace DhondtAppDesign
         private System.Windows.Forms.Label lmandatumszam;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lpartszam;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lpartokszama;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lnyertes;
         private System.Windows.Forms.Label lnyertesnev;
         private System.Windows.Forms.Panel nyertesszavsz;
-        private System.Windows.Forms.Label lnyertesszavszam;
+        private System.Windows.Forms.Label lnyertesszavszamf;
         private System.Windows.Forms.Label lnyertszavszam;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label larany;
         private System.Windows.Forms.Label lnyertmandarany;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cszavazatespart;
         private System.Windows.Forms.DataGridView dgvmatrix;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cszavaranydiag;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cmandatumok;
         private System.Windows.Forms.Panel panel8;
     }
 }
