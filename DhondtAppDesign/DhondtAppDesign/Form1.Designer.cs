@@ -126,6 +126,7 @@ namespace DhondtAppDesign
             this.lfilenev.Name = "lfilenev";
             this.lfilenev.Size = new System.Drawing.Size(272, 26);
             this.lfilenev.TabIndex = 4;
+            this.lfilenev.Text = "Üres";
             this.lfilenev.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // bgeneral
@@ -175,9 +176,9 @@ namespace DhondtAppDesign
             this.lszavazatszam.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.lszavazatszam.Location = new System.Drawing.Point(3, 42);
             this.lszavazatszam.Name = "lszavazatszam";
-            this.lszavazatszam.Size = new System.Drawing.Size(108, 25);
+            this.lszavazatszam.Size = new System.Drawing.Size(24, 25);
             this.lszavazatszam.TabIndex = 10;
-            this.lszavazatszam.Text = "10000000";
+            this.lszavazatszam.Text = "0";
             // 
             // lszavszam
             // 
@@ -207,9 +208,9 @@ namespace DhondtAppDesign
             this.lnemszavazott.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.lnemszavazott.Location = new System.Drawing.Point(13, 42);
             this.lnemszavazott.Name = "lnemszavazott";
-            this.lnemszavazott.Size = new System.Drawing.Size(108, 25);
+            this.lnemszavazott.Size = new System.Drawing.Size(24, 25);
             this.lnemszavazott.TabIndex = 10;
-            this.lnemszavazott.Text = "10000000";
+            this.lnemszavazott.Text = "0";
             // 
             // lnemszav
             // 
@@ -259,9 +260,9 @@ namespace DhondtAppDesign
             this.lmandatumszam.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.lmandatumszam.Location = new System.Drawing.Point(13, 42);
             this.lmandatumszam.Name = "lmandatumszam";
-            this.lmandatumszam.Size = new System.Drawing.Size(108, 25);
+            this.lmandatumszam.Size = new System.Drawing.Size(24, 25);
             this.lmandatumszam.TabIndex = 10;
-            this.lmandatumszam.Text = "10000000";
+            this.lmandatumszam.Text = "0";
             // 
             // panel4
             // 
@@ -290,9 +291,9 @@ namespace DhondtAppDesign
             this.lpartokszama.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.lpartokszama.Location = new System.Drawing.Point(13, 42);
             this.lpartokszama.Name = "lpartokszama";
-            this.lpartokszama.Size = new System.Drawing.Size(108, 25);
+            this.lpartokszama.Size = new System.Drawing.Size(24, 25);
             this.lpartokszama.TabIndex = 10;
-            this.lpartokszama.Text = "10000000";
+            this.lpartokszama.Text = "0";
             // 
             // panel5
             // 
@@ -321,9 +322,9 @@ namespace DhondtAppDesign
             this.lnyertesnev.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.lnyertesnev.Location = new System.Drawing.Point(13, 42);
             this.lnyertesnev.Name = "lnyertesnev";
-            this.lnyertesnev.Size = new System.Drawing.Size(76, 25);
+            this.lnyertesnev.Size = new System.Drawing.Size(19, 25);
             this.lnyertesnev.TabIndex = 10;
-            this.lnyertesnev.Text = "Fidesz";
+            this.lnyertesnev.Text = "-";
             // 
             // nyertesszavsz
             // 
@@ -352,9 +353,9 @@ namespace DhondtAppDesign
             this.lnyertszavszam.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.lnyertszavszam.Location = new System.Drawing.Point(13, 42);
             this.lnyertszavszam.Name = "lnyertszavszam";
-            this.lnyertszavszam.Size = new System.Drawing.Size(108, 25);
+            this.lnyertszavszam.Size = new System.Drawing.Size(24, 25);
             this.lnyertszavszam.TabIndex = 10;
-            this.lnyertszavszam.Text = "10000000";
+            this.lnyertszavszam.Text = "0";
             this.lnyertszavszam.Click += new System.EventHandler(this.lnyertszavszam_Click);
             // 
             // panel6
@@ -384,9 +385,9 @@ namespace DhondtAppDesign
             this.lnyertmandarany.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.lnyertmandarany.Location = new System.Drawing.Point(13, 42);
             this.lnyertmandarany.Name = "lnyertmandarany";
-            this.lnyertmandarany.Size = new System.Drawing.Size(73, 25);
+            this.lnyertmandarany.Size = new System.Drawing.Size(24, 25);
             this.lnyertmandarany.TabIndex = 10;
-            this.lnyertmandarany.Text = "75,4%";
+            this.lnyertmandarany.Text = "0";
             // 
             // panel7
             // 
@@ -451,6 +452,7 @@ namespace DhondtAppDesign
             this.cszavaranydiag.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.CustomProperties = "PieLabelStyle=Disabled";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             series2.YValuesPerPoint = 2;
