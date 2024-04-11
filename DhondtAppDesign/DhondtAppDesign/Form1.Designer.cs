@@ -486,6 +486,7 @@ namespace DhondtAppDesign
             this.cmandatumok.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series3.ChartArea = "Mandatumok";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.CustomProperties = "PieLabelStyle=Disabled";
             series3.Legend = "Legend1";
             series3.Name = "Series1";
             series3.YValuesPerPoint = 2;
