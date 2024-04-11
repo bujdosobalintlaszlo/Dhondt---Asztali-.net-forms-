@@ -82,8 +82,22 @@ namespace DhondtAppDesign
             this.Controls.Add(pBeallitasok);
             pBeallitasok.BringToFront();
 
-            TextBox tszavazok = new TextBox();
-            pBeallitasok.Controls.Add(tszavazok);
+            FlowLayoutPanel fpszavszam = new FlowLayoutPanel();
+
+            NumericUpDown nuszavszam = new NumericUpDown();
+            nuszavszam.Maximum = 9999999;
+            nuszavszam.Minimum = 30000;
+
+            Label lszavszam = new Label();
+            lszavszam.Text = "Szavazatok száma";
+
+            fpszavszam.Controls.Add(lszavszam);
+            fpszavszam.Controls.Add(nuszavszam);
+            lszavszam.Location = new Point(20,20);
+            nuszavszam.Location = new Point(40,20);
+            
+            pBeallitasok.Controls.Add(fpszavszam);
+
 
 
 
@@ -96,6 +110,7 @@ namespace DhondtAppDesign
             if (sz.Ellenoriz())
             {
                 sz.SecondRun(dgvmatrix);
+
             }
             else {
                 lfilenev.Text = "Hibás file!";

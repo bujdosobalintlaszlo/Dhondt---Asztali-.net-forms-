@@ -30,18 +30,18 @@ namespace DhondtAppDesign
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lnev = new System.Windows.Forms.Label();
             this.bfilekivalaszt = new System.Windows.Forms.Button();
@@ -76,8 +76,8 @@ namespace DhondtAppDesign
             this.cszavazatespart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvmatrix = new System.Windows.Forms.DataGridView();
             this.cszavaranydiag = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.cmandatumok = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.cmandatumok = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -89,8 +89,8 @@ namespace DhondtAppDesign
             ((System.ComponentModel.ISupportInitialize)(this.cszavazatespart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmatrix)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cszavaranydiag)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmandatumok)).BeginInit();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmandatumok)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -411,24 +411,25 @@ namespace DhondtAppDesign
             // 
             // cszavazatespart
             // 
-            chartArea4.Name = "ChartArea1";
-            this.cszavazatespart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.cszavazatespart.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.cszavazatespart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.cszavazatespart.Legends.Add(legend1);
             this.cszavazatespart.Location = new System.Drawing.Point(908, 547);
             this.cszavazatespart.Name = "cszavazatespart";
             this.cszavazatespart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.cszavazatespart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series1.IsVisibleInLegend = false;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.cszavazatespart.Series.Add(series1);
             this.cszavazatespart.Size = new System.Drawing.Size(978, 432);
             this.cszavazatespart.TabIndex = 19;
             this.cszavazatespart.Text = "chart1";
-            title4.Name = "Title1";
-            title4.Text = "Választási eredmény";
-            this.cszavazatespart.Titles.Add(title4);
+            title1.Name = "Title1";
+            title1.Text = "Választási eredmény";
+            this.cszavazatespart.Titles.Add(title1);
             this.cszavazatespart.Click += new System.EventHandler(this.chart1_Click);
             // 
             // dgvmatrix
@@ -441,47 +442,25 @@ namespace DhondtAppDesign
             // 
             // cszavaranydiag
             // 
-            chartArea5.Name = "ChartArea1";
-            this.cszavaranydiag.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.cszavaranydiag.Legends.Add(legend5);
+            chartArea2.Name = "ChartArea1";
+            this.cszavaranydiag.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.cszavaranydiag.Legends.Add(legend2);
             this.cszavaranydiag.Location = new System.Drawing.Point(1412, 238);
             this.cszavaranydiag.Name = "cszavaranydiag";
             this.cszavaranydiag.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            series5.YValuesPerPoint = 2;
-            this.cszavaranydiag.Series.Add(series5);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            series2.YValuesPerPoint = 2;
+            this.cszavaranydiag.Series.Add(series2);
             this.cszavaranydiag.Size = new System.Drawing.Size(474, 290);
             this.cszavaranydiag.TabIndex = 22;
             this.cszavaranydiag.Text = "chart3";
-            title5.Name = "Title1";
-            title5.Text = "Szavazati arány";
-            this.cszavaranydiag.Titles.Add(title5);
-            // 
-            // cmandatumok
-            // 
-            chartArea6.Name = "Mandatumok";
-            this.cmandatumok.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.cmandatumok.Legends.Add(legend6);
-            this.cmandatumok.Location = new System.Drawing.Point(908, 238);
-            this.cmandatumok.Name = "cmandatumok";
-            this.cmandatumok.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series6.ChartArea = "Mandatumok";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            series6.YValuesPerPoint = 2;
-            this.cmandatumok.Series.Add(series6);
-            this.cmandatumok.Size = new System.Drawing.Size(474, 290);
-            this.cmandatumok.TabIndex = 23;
-            this.cmandatumok.Text = "chart2";
-            title6.Name = "Title2";
-            title6.Text = "Mandátum arány";
-            this.cmandatumok.Titles.Add(title6);
+            title2.Name = "Title1";
+            title2.Text = "Szavazati arány";
+            this.cszavaranydiag.Titles.Add(title2);
             // 
             // panel8
             // 
@@ -496,13 +475,35 @@ namespace DhondtAppDesign
             this.panel8.Size = new System.Drawing.Size(1853, 55);
             this.panel8.TabIndex = 24;
             // 
+            // cmandatumok
+            // 
+            chartArea3.Name = "Mandatumok";
+            this.cmandatumok.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.cmandatumok.Legends.Add(legend3);
+            this.cmandatumok.Location = new System.Drawing.Point(908, 238);
+            this.cmandatumok.Name = "cmandatumok";
+            this.cmandatumok.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series3.ChartArea = "Mandatumok";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            series3.YValuesPerPoint = 2;
+            this.cmandatumok.Series.Add(series3);
+            this.cmandatumok.Size = new System.Drawing.Size(474, 290);
+            this.cmandatumok.TabIndex = 24;
+            this.cmandatumok.Text = "chart2";
+            title3.Name = "Title2";
+            title3.Text = "Mandátum arány";
+            this.cmandatumok.Titles.Add(title3);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 991);
-            this.Controls.Add(this.panel8);
             this.Controls.Add(this.cmandatumok);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.cszavaranydiag);
             this.Controls.Add(this.dgvmatrix);
             this.Controls.Add(this.cszavazatespart);
@@ -537,9 +538,9 @@ namespace DhondtAppDesign
             ((System.ComponentModel.ISupportInitialize)(this.cszavazatespart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmatrix)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cszavaranydiag)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmandatumok)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmandatumok)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -581,8 +582,8 @@ namespace DhondtAppDesign
         private System.Windows.Forms.DataVisualization.Charting.Chart cszavazatespart;
         private System.Windows.Forms.DataGridView dgvmatrix;
         private System.Windows.Forms.DataVisualization.Charting.Chart cszavaranydiag;
-        private System.Windows.Forms.DataVisualization.Charting.Chart cmandatumok;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.DataVisualization.Charting.Chart cmandatumok;
     }
 }
 

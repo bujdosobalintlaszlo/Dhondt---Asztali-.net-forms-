@@ -140,9 +140,12 @@ namespace Dhondt
 
         public void SecondTablaKiir(DataGridView dataGridView, Partok p)
         {
+            Szamol sz = new Szamol(filepath);
+            List<(int, string)> k = sz.Cserelget();
+            int n = MandatumCount(k).Sum(x => x.Value);
             dataGridView.Rows.Clear();
             dataGridView.Columns.Clear();
-            dataGridView.ColumnCount = p.Parts.Count + 1;
+            dataGridView.ColumnCount = n+1;
             dataGridView.Columns[0].Name = "";
             dataGridView.RowHeadersVisible = false;
             dataGridView.ReadOnly = true;
@@ -158,6 +161,8 @@ namespace Dhondt
             {
                 dataGridView.Columns[i].Name = $"{i}.";
             }
+
+
 
             foreach (var part in p.Parts)
             {
@@ -175,15 +180,31 @@ namespace Dhondt
                     bool isTrue = part.oszlop[i - 1].Item2;
                     if (isTrue)
                     {
-                        dataGridView.Rows[rowIndex].Cells[i].Style.BackColor = Color.Red;
+                        dataGridView.Rows[rowIndex].Cells[i].Style.BackColor = Color.LightBlue;
                     }
                 }
             }
-            dataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.ScrollBars = ScrollBars.None;
+            
+            for (int i = 0; i < dataGridView.RowCount; i++)
+            {
+                dataGridView.Rows[i].Height = ((dataGridView.Height - 13) / p.Partszam - 1);
+            }
+
+            for (int i = 0; i < dataGridView.ColumnCount; ++i) {
+                dataGridView.Columns[i].Width = (dataGridView.Width + 1) / (n+1);
+                //MessageBox.Show((dataGridView.Columns[i].Width).ToString());
+            }
+            dataGridView.KeyDown += dataGridView_KeyDown;
 
         }
-
+        private void dataGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+            {
+                e.Handled = true;
+            }
+        }
 
 
         public void ThirdTableKiir(ref DataGridView dataGridView1)
@@ -359,17 +380,15 @@ namespace Dhondt
             for (int i = 0; i < sz.p.Parts.Count; ++i)
             {
                 c.Series[$"Series1"].Points.AddXY($"{sz.p.Parts[i].PartNev}", sz.p.Parts[i].SzavazatSzam);
+            
             }
         }
 
         public void SzavazatokEsPartok(Chart c) {
             Szamol sz = new Szamol(filepath);
-            //c.Series.Clear();
             for (int i = 0; i < sz.p.Parts.Count; ++i)
             {
-                //c.Series.Add(sz.p.Parts[i].PartNev);
                 c.Series["Series1"].Points.AddXY($"{sz.p.Parts[i].PartNev}", sz.p.Parts[i].SzavazatSzam);
-                //MessageBox.Show($"{sz.p.Parts[i].PartNev}");
             }
         }
 
