@@ -89,7 +89,7 @@ namespace Dhondt
             for (int i = 0; i < dataGridView.RowCount; i++)
             {
                 dataGridView.Rows[i].Height = ((dataGridView.Height - 13) / p.Partszam - 1);
-                MessageBox.Show(((dataGridView.Height - 13) / p.Partszam - 1).ToString());
+               // MessageBox.Show(((dataGridView.Height - 13) / p.Partszam - 1).ToString());
             }
 
             for (int i = 0; i < dataGridView.ColumnCount; ++i) {
@@ -121,7 +121,7 @@ namespace Dhondt
         public string NyertMandArany() {
             Szamol sz = new Szamol(filepath);
             List<(int, string)> k = sz.Cserelget();
-            return ((double)MandatumCount(k).Max(x => x.Value) / MandatumCount(k).Sum(x => x.Value) *100).ToString();
+            return Math.Round((double)MandatumCount(k).Max(x => x.Value) / MandatumCount(k).Sum(x => x.Value) *100 ,2).ToString();
         }
         public string Partszam() {
             Szamol sz = new Szamol(filepath);
@@ -167,33 +167,42 @@ namespace Dhondt
 
         public void General(int partszam,int mandatumszam,int nemszavazott,int szavazokszama) {
             int nullaz = 0;
-            int min = (int)szavazokszama / 400;
-            int max = (int)szavazokszama / 100;
+            int min = 0;
+            int max = (int)(szavazokszama*0.75);
+            int tizsz = (int)(szavazokszama * 0.25);
             nemszav = nemszavazott;
             StreamWriter w = new StreamWriter("gen.txt");
             w.WriteLine(mandatumszam);
-            szavazokszama -= nemszav;
             for(int i=0; i < partszam; ++i)
             {
-                if (nullaz < 2)
+                if (i != partszam - 1)
                 {
-                    if (r.Next(0, 2) == 1)
+                    if (nullaz < 2)
                     {
-                        w.WriteLine(string.Concat("Part", abc[i], " ", r.Next(0, 2), " ", 0, " ", szazalek[r.Next(0, 3)]));
-                        nullaz++;
+                        if (r.Next(0, 16) == 1)
+                        {
+                            w.WriteLine(string.Concat("Part", abc[i], " ", r.Next(0, 2), " ", 0, " ", szazalek[r.Next(0, 3)]));
+                            nullaz++;
+                        }
+                        else
+                        {
+                            int szavazata = szavazokszama - r.Next(min, max);
+                            szavazokszama -= szavazata;
+                            max = (int)(szavazokszama * 0.9);
+                            w.WriteLine(string.Concat("Part", abc[i], " ", r.Next(0, 2), " ", szavazata, " ", szazalek[r.Next(0, 3)]));
+                        }
                     }
                     else
                     {
                         int szavazata = szavazokszama - r.Next(min, max);
                         szavazokszama -= szavazata;
+                        max = (int)(szavazokszama * 0.9);
                         w.WriteLine(string.Concat("Part", abc[i], " ", r.Next(0, 2), " ", szavazata, " ", szazalek[r.Next(0, 3)]));
+
                     }
                 }
                 else { 
-                    int szavazata = szavazokszama - r.Next(min, max);
-                    szavazokszama -= szavazata;
-                    w.WriteLine(string.Concat("Part", abc[i], " ", r.Next(0, 2), " ", szavazata, " ", szazalek[r.Next(0, 3)]));
-
+                    w.WriteLine(string.Concat("Part", abc[i], " ", r.Next(0, 2), " ", szavazokszama, " ", szazalek[r.Next(0, 3)]));
                 }
             }
             w.Close();

@@ -84,6 +84,11 @@ namespace DhondtAppDesign
         Panel pBeallitasok = new Panel();
         private void bgeneral_Click(object sender, EventArgs e)
         {
+            nuszavszam = new NumericUpDown();
+            nunemszav = new NumericUpDown();
+            numandatumszam = new NumericUpDown();
+            numapartszam = new NumericUpDown();
+
             pBeallitasok = new Panel();
             pBeallitasok.Height = this.Height;
             pBeallitasok.Width = this.Width;
@@ -172,7 +177,6 @@ namespace DhondtAppDesign
         }
         void Gen(object o, EventArgs e) {
             Szimulacio sz = new Szimulacio("gen.txt");
-            MessageBox.Show(lpartszam.Text);
             sz.General(int.Parse(numapartszam.Value.ToString()),int.Parse(numandatumszam.Value.ToString()),int.Parse(nunemszav.Value.ToString()),int.Parse(nuszavszam.Value.ToString()));
             lszavazatszam.Text = sz.SzavazatSzam();
             lmandatumszam.Text = sz.MandSzam();
@@ -183,6 +187,7 @@ namespace DhondtAppDesign
             sz.MandatumAranyDiagram(cmandatumok);
             sz.SzavazatiAranyDiagram(cszavaranydiag);
             sz.SzavazatokEsPartok(cszavazatespart);
+            sz.SecondRun(dgvmatrix);
             btorol.Enabled = true;
             bok.Enabled = false;
             bgeneral.Enabled = false;
@@ -214,7 +219,7 @@ namespace DhondtAppDesign
             bgeneral.Enabled = false;
             bfilekivalaszt.Enabled = false;
             //lnyertszavszam.Text = sz.NyertSzavSzam();
-            //dgvmatrix
+            
         }
 
         private void btorol_Click(object sender, EventArgs e)
@@ -227,13 +232,16 @@ namespace DhondtAppDesign
             lnemszavazott.Text = "0";
             lfilenev.Text = "Üres";
             lnyertszavszam.Text = "0";
-            cmandatumok.Series.Clear();
-            cszavaranydiag.Series.Clear();
-            cszavazatespart.Series.Clear();
+            cmandatumok.Series["Series1"].Points.Clear();
+            cszavaranydiag.Series["Series1"].Points.Clear();
+            cszavazatespart.Series["Series1"].Points.Clear();
             hasznaltFile = "";
             dgvmatrix.Rows.Clear();
             dgvmatrix.DataSource = null;
             dgvmatrix.Refresh();
+            dgvmatrix.Columns.Clear();
+            bgeneral.Enabled = true;
+            bfilekivalaszt.Enabled = true;
         }
 
         private void lnyertszavszam_Click(object sender, EventArgs e)
