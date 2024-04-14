@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+
 namespace Dhondt
 {
     /// <summary>
@@ -22,6 +23,7 @@ namespace Dhondt
             }
         }
         private static int mandatum;
+        public int nemszavazott;
         //mandátum gettere
         public static int Mandatum
         {
@@ -43,7 +45,12 @@ namespace Dhondt
         /// <param name="sor">A sor, amelyből inicializáljuk a Partok objektumot.</param>
         public Partok(string fajlNev)
         {
-            mandatum = Convert.ToInt32(File.ReadAllLines(fajlNev).Take(1).First());
+            List<string> lines = File.ReadAllLines(fajlNev).ToList();
+            List<string> firstLineValues = lines[0].Split(',').ToList();
+            mandatum = Convert.ToInt32(firstLineValues[0]);
+            nemszavazott = Convert.ToInt32(firstLineValues[1]);
+            //mandatum = Convert.ToInt32(File.ReadAllLines(fajlNev).Take(1).First());
+            //nemszavazott = Convert.ToInt32(File.ReadAllLines(fajlNev).Take(2));
             Parts = File.ReadAllLines(fajlNev).Skip(1).Select(sor => new Part(sor)).ToList();
         }
     }

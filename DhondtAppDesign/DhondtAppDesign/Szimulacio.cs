@@ -89,7 +89,6 @@ namespace Dhondt
             for (int i = 0; i < dataGridView.RowCount; i++)
             {
                 dataGridView.Rows[i].Height = ((dataGridView.Height - 13) / p.Partszam - 1);
-               // MessageBox.Show(((dataGridView.Height - 13) / p.Partszam - 1).ToString());
             }
 
             for (int i = 0; i < dataGridView.ColumnCount; ++i) {
@@ -153,7 +152,6 @@ namespace Dhondt
             for (int i = 0; i < sz.p.Parts.Count; ++i)
             {
                 c.Series[$"Series1"].Points.AddXY($"{sz.p.Parts[i].PartNev}", sz.p.Parts[i].SzavazatSzam);
-            
             }
         }
 
@@ -164,15 +162,19 @@ namespace Dhondt
                 c.Series["Series1"].Points.AddXY($"{sz.p.Parts[i].PartNev}", sz.p.Parts[i].SzavazatSzam);
             }
         }
+        public string Nemszav() { 
+            Szamol sz = new Szamol(filepath);
+            return sz.p.nemszavazott.ToString();
+        }
 
         public void General(int partszam,int mandatumszam,int nemszavazott,int szavazokszama) {
             int nullaz = 0;
             int min = 0;
             int max = (int)(szavazokszama*0.75);
             int tizsz = (int)(szavazokszama * 0.25);
-            nemszav = nemszavazott;
+            //nemszav = nemszavazott;
             StreamWriter w = new StreamWriter("gen.txt");
-            w.WriteLine(mandatumszam);
+            w.WriteLine($"{mandatumszam},{nemszavazott}");
             for(int i=0; i < partszam; ++i)
             {
                 if (i != partszam - 1)

@@ -184,6 +184,7 @@ namespace DhondtAppDesign
             lnyertesnev.Text = sz.NyertNev();
             lpartokszama.Text = sz.Partszam();
             lnyertszavszam.Text = sz.NyertSzavSzam();
+            lnemszavazott.Text = sz.Nemszav();
             sz.MandatumAranyDiagram(cmandatumok);
             sz.SzavazatiAranyDiagram(cszavaranydiag);
             sz.SzavazatokEsPartok(cszavazatespart);
@@ -211,6 +212,7 @@ namespace DhondtAppDesign
             lnyertesnev.Text = sz.NyertNev();
             lpartokszama.Text = sz.Partszam();
             lnyertszavszam.Text = sz.NyertSzavSzam();
+            lnemszavazott.Text = sz.Nemszav();
             sz.MandatumAranyDiagram(cmandatumok);
             sz.SzavazatiAranyDiagram(cszavaranydiag);
             sz.SzavazatokEsPartok(cszavazatespart);
